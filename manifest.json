@@ -1,0 +1,25 @@
+{
+    "name": "Simple AdBlock",
+    "description": "Think of it as an amazing description",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions": [
+        "declarativeNetRequest",
+        "tabs",
+        "activeTab"
+    ],
+    "content_scripts": [{
+        "js": ["script.js"],
+        "run_at": "document_idle",
+        "matches": ["<all_urls>"]
+    }],
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "ruleset_1",
+                "enabled": true,
+                "path": "rules.json"
+            }
+        ]
+    }
+}
